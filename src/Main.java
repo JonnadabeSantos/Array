@@ -26,6 +26,7 @@ public class Main {
                 if  ( !(i == semana.length - 1  && j == semana[i].length - 1) ) {
                     System.out.print(" → ");;
 
+                    //22
 
 
                 }
