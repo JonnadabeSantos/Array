@@ -22,18 +22,53 @@ public class ArrayExercicios {
                 count++;
             }
 
+            System.out.println();
+            System.out.println();
+
+            String menu = String.format("""
+                    %s < Menu > %s
+                    
+                    1 - Ver os primeiros cololcados
+                    2 - Ver os ultimos cololcados
+                    
+                    Digite (1) ou (2):""",linha, linha);
+
+            System.out.print(menu + " ");
+            int indice = usuario.nextInt();
+
+            switch (indice) {
+                case 1:
+                    System.out.print("Selecione o primeiro valor desejado: ");
+                    int inter1 = usuario.nextInt();
+                    System.out.print("Selecione o segundo valor desejado: ");
+                    int inter2 = usuario.nextInt();
+
+
+
+
+
+                    String [] resultado = Arrays.copyOfRange( times, ( inter1 - 1) ,( inter2 ) );
+
+                    System.out.println(linha);
+                    String primeiros = String.format(" O intervalo entre os %d São: ",( inter2 - inter1 ) + 1 );
+                    System.out.println(primeiros);
+
+                    for ( String nome : resultado ) {
+                        System.out.print( nome + " → ");
+                    }
+
+
+                    break;
+            }
 
             break;
+
         }
 
-       /* System.out.print("Digite um valor: ");
-        String indice = usuario.nextLine();
 
 
 
-        String primeiros = String.format(" Os %s primeiros são: ", indice );
-        String ultimos = "Os ultimos são: ";
-*/
+//        String ultimos = "Os ultimos são: ";
 
     }
 }
