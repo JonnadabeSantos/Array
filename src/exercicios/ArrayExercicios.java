@@ -30,22 +30,20 @@ public class ArrayExercicios {
                     
                     1 - Ver os primeiros cololcados
                     2 - Ver os ultimos cololcados
+                    3 - Ver o Intervalos entre eles
+                    4 - Perquisar a Posição
                     
-                    Digite (1) ou (2):""",linha, linha);
+                    Digite um valor entre (1) e (4):""",linha, linha);
 
             System.out.print(menu + " ");
             int indice = usuario.nextInt();
 
             switch (indice) {
-                case 1:
+                case 3:
                     System.out.print("Selecione o primeiro valor desejado: ");
                     int inter1 = usuario.nextInt();
                     System.out.print("Selecione o segundo valor desejado: ");
                     int inter2 = usuario.nextInt();
-
-
-
-
 
                     String [] resultado = Arrays.copyOfRange( times, ( inter1 - 1) ,( inter2 ) );
 
@@ -56,8 +54,6 @@ public class ArrayExercicios {
                     for ( String nome : resultado ) {
                         System.out.print( nome + " → ");
                     }
-
-
                     break;
             }
 
