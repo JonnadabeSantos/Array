@@ -45,10 +45,38 @@ public class ArrayExercicios {
                     System.out.print("Selecione o segundo valor desejado: ");
                     int inter2 = usuario.nextInt();
 
+                    // Validação se o (inter2) é maior que o (Inter1)
+                    if (inter2 < inter1) {
+
+                        while (true) {
+                            System.out.println(linha);
+                            System.out.println("Error ! o segundo valor não pode ser maior que o primeiro!:");
+                            System.out.println(linha);
+
+                            System.out.print("Selecione o primeiro valor desejado: ");
+                            inter1 = usuario.nextInt();
+                            System.out.print("Selecione o segundo valor desejado: ");
+                            inter2 = usuario.nextInt();
+
+                            /* O loop se repetirá ate o (inter2) se maior que o (inter1)
+                            impedindo assim que ocorra um erro no comando seguinte → (Arrays.copyOfRange)
+                            */
+
+                            if (inter2 > inter1) {
+                                break;
+                            }
+
+                        }
+                    }
+
+                    System.out.println();
+                    System.out.println();
+
+
                     String [] resultado = Arrays.copyOfRange( times, ( inter1 - 1) ,( inter2 ) );
 
                     System.out.println(linha);
-                    String primeiros = String.format(" O intervalo entre os %d São: ",( inter2 - inter1 ) + 1 );
+                    String primeiros = String.format("O intervalo entre os %d São: ",( inter2 - inter1 ) + 1 );
                     System.out.println(primeiros);
 
                     for ( String nome : resultado ) {
@@ -57,8 +85,7 @@ public class ArrayExercicios {
                     break;
             }
 
-            break;
-
+        break;
         }
 
 
