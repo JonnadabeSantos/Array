@@ -7,7 +7,7 @@ public class ArrayExercicios {
 
         boolean endPrograma = false;
         String[] times = { "Flamengo", "Palmeiras", "São Paulo", "Athletico-PR", "Atlético-MG", "Corinthians", "Fluminense", "Grêmio" };
-        String linha = "=-=-=-=-=-=-=-=-=-==-=-=-=-=";
+        String linha = "=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=";
         String lista = "Lista de times do Brasileirão: ";
 
         Scanner usuario = new Scanner(System.in);
@@ -30,6 +30,7 @@ public class ArrayExercicios {
                     1 - Voltar ao Menu Inicial
                     2 - Ir para o Menu Seguinte
                     3 - Finalizar 
+                    
                     """, linha, linha);
 
 
@@ -44,6 +45,7 @@ public class ArrayExercicios {
             int indice = usuario.nextInt();
 
             switch (indice) {
+
                 case 1:
                     System.out.printf("%n%s%s %n%s%n",linha, linha, lista );
                     int count = 0;
@@ -59,6 +61,7 @@ public class ArrayExercicios {
                     // Redirecionamento do Programa
                     do {
                         System.out.print(menuEscolha);
+                        System.out.print("Digite uma Opção: ");
                         indice = usuario.nextInt();
 
                         if ( indice < 1 || indice > 3 ) {
@@ -113,6 +116,7 @@ public class ArrayExercicios {
                     // Redirecionamento do Programa
                     do {
                         System.out.print(menuEscolha);
+                        System.out.print("Digite uma Opção: ");
                         indice = usuario.nextInt();
 
                         if ( indice < 1 || indice > 3 ) {
@@ -131,6 +135,8 @@ public class ArrayExercicios {
                         break;
                     }
                     // Fim do redirecionamento
+
+
 
 
 
@@ -165,6 +171,7 @@ public class ArrayExercicios {
                     // Redirecionamento do Programa
                     do {
                         System.out.print(menuEscolha);
+                        System.out.print("Digite uma Opção: ");
                         indice = usuario.nextInt();
 
                         if ( indice < 1 || indice > 3 ) {
@@ -201,9 +208,12 @@ public class ArrayExercicios {
                     if (inter2 < inter1) {
 
                         while (true) {
-                            System.out.println(linha);
+                            System.out.printf("%n%s%s%n"+
+                                    "Error ! o segundo valor não pode ser maior que o primeiro!: " +
+                                    "%n%s%s%n%n", linha, linha, linha, linha );
+                            /*System.out.println(linha);
                             System.out.println("Error ! o segundo valor não pode ser maior que o primeiro!:");
-                            System.out.println(linha);
+                            System.out.println(linha);*/
 
                             System.out.print("Selecione o primeiro valor desejado: ");
                             inter1 = usuario.nextInt();
@@ -233,17 +243,20 @@ public class ArrayExercicios {
 
                     count = 0;
                     for ( String nome : resultado4) {
+                        System.out.print( nome );
                         if ( !( count == resultado4.length - 1 ) ) {
-                            System.out.print( nome + " → ");
+                            System.out.print( " → " );
                         }
                         count++;
                     }
+                    System.out.println();
                     System.out.println();
 
 
                     // Redirecionamento do Programa
                     do {
                         System.out.print(menuEscolha);
+                        System.out.print("Digite uma Opção: ");
                         indice = usuario.nextInt();
 
                         if ( indice < 1 || indice > 3 ) {
@@ -263,8 +276,55 @@ public class ArrayExercicios {
                     }
                     // Fim do redirecionamento
 
+
+
+
+
+
+                case 5:
+                    do {
+                    System.out.print("Deseja Ver o time que esta em qual posição?: ");
+                    indice = usuario.nextInt();
+                        if (  indice < 1 || indice >  times.length  ){
+                            System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 8:");
+                            }
+
+                    }while ( indice < 1 || indice > ( times.length ) );
+                    System.out.printf("%nO time que esta na %dº posição é: %s %n%n ", indice, times[ indice - 1 ] );
+
+                    // Redirecionamento do Programa
+                    do {
+                        System.out.print(menuEscolha);
+
+                        System.out.print("Digite uma Opção: ");
+                        indice = usuario.nextInt();
+
+                        if ( indice < 1 || indice > 3 ) {
+                            System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 3:");
+                        }
+
+
+                    } while ( indice < 1 || indice > 3 );
+
+
+                    if ( indice == 1  ) {
+                        break;
+                    }
+                    else if ( indice == 3  ) {
+                        endPrograma = true;
+                        break;
+                    }
+                    // Fim do redirecionamento
+
+
             }
+
+
+
         }
+
+
+
 
 
 
