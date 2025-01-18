@@ -11,6 +11,8 @@ public class ArrayExercicios {
         String lista = "Lista de times do Brasileirão: ";
 
         Scanner usuario = new Scanner(System.in);
+        Scanner texto = new Scanner(System.in);
+        String nomePesquisado = texto.nextLine();
 
         String menu = String.format("""
                     %s < Menu > %s
@@ -19,10 +21,11 @@ public class ArrayExercicios {
                     2 - Ver os primeiros cololcados
                     3 - Ver os ultimos cololcados
                     4 - Selecionar Intervalos entre eles
-                    5 - Perquisar a Posição
-                    6 - Finalizar
+                    5 - Pesquisar a Posição
+                    6 - Verifique por time
+                    7 - Finalizar
                     
-                    Digite um valor entre (1) e (6):""",linha, linha);
+                    Digite um valor entre (1) e (7):""",linha, linha);
 
         String menuEscolha = String.format("""
                     %s < Selecione uma Opção > %s
@@ -317,6 +320,58 @@ public class ArrayExercicios {
                     // Fim do redirecionamento
 
 
+
+
+
+
+                case 6:
+                    boolean existe = false;
+                    while ( true ){
+                        System.out.print("\nDigite o nome do seu time: ");
+                        nomePesquisado = texto.nextLine();
+
+
+
+                        for ( String nome : times ) {
+                            if ( nome.equals(nomePesquisado) ) {
+                                System.out.println( nome + " foi encontrado !" );
+                                existe = true;
+                                break;
+                            }
+                        }
+
+                        String buscar = existe ? "encontrado" : "nao encontrado";
+
+                        do {
+                            System.out.printf("\nTime %s ! Deseja pesquisar outro Time [ S ou N ]?: ", buscar);
+                            nomePesquisado = texto.nextLine();
+
+                            if ( ( nomePesquisado.equals("S") || nomePesquisado.equals("s") || nomePesquisado.equals("N") || nomePesquisado.equals("n") ) ) {
+                                System.out.println("\nOpção inválida ! Digite [ S ] ou [ N ]: ");
+                            }
+
+
+                        } while ( ( nomePesquisado.equals("S") || nomePesquisado.equals("s") || nomePesquisado.equals("N") || nomePesquisado.equals("n") ) );
+
+
+                        if ( existe ){
+                            break;
+                        }
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
 
 
@@ -329,7 +384,7 @@ public class ArrayExercicios {
 
 
 
-//        String ultimos = "Os ultimos são: ";
+
 
     }
 }
