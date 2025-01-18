@@ -5,41 +5,85 @@ import java.util.Arrays;
 public class ArrayExercicios {
     public static void main(String[] args) {
 
+        boolean endPrograma = false;
         String[] times = { "Flamengo", "Palmeiras", "São Paulo", "Athletico-PR", "Atlético-MG", "Corinthians", "Fluminense", "Grêmio" };
-        String linha = "=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
+        String linha = "=-=-=-=-=-=-=-=-=-==-=-=-=-=";
         String lista = "Lista de times do Brasileirão: ";
 
         Scanner usuario = new Scanner(System.in);
 
-        while (true) {
-            System.out.printf("%s %n%s%n",linha, lista );
-            int count = 0;
-            for ( String time : times ) {
-                System.out.print( time );
-                if ( !( count == times.length -1 ) ){
-                    System.out.print( " - ");
-                }
-                count++;
-            }
-
-            System.out.println();
-            System.out.println();
-
-            String menu = String.format("""
+        String menu = String.format("""
                     %s < Menu > %s
                     
-                    1 - Ver os primeiros cololcados
-                    2 - Ver os ultimos cololcados
-                    3 - Ver o Intervalos entre eles
-                    4 - Perquisar a Posição
+                    1 - Ver lista completa 
+                    2 - Ver os primeiros cololcados
+                    3 - Ver os ultimos cololcados
+                    4 - Selecionar Intervalos entre eles
+                    5 - Perquisar a Posição
+                    6 - Finalizar
                     
-                    Digite um valor entre (1) e (4):""",linha, linha);
+                    Digite um valor entre (1) e (6):""",linha, linha);
+
+        String menuEscolha = String.format("""
+                    %s < Selecione uma Opção > %s
+                    
+                    1 - Voltar ao Menu Inicial
+                    2 - Ir para o Menu Seguinte
+                    3 - Finalizar 
+                    """, linha, linha);
+
+
+        System.out.println( "\n" + linha + "BEM VINDO A LISTA DO BRASILEIRÃO" + linha + "\n" );
+
+        while (true) {
+            if (endPrograma) {
+                break;
+            }
 
             System.out.print(menu + " ");
             int indice = usuario.nextInt();
 
             switch (indice) {
-                case 3:
+                case 1:
+                    System.out.printf("%n%s%s %n%s%n",linha, linha, lista );
+                    int count = 0;
+                    for ( String time : times ) {
+                        System.out.print( time );
+                        if ( !( count == times.length -1 ) ){
+                            System.out.print( " - ");
+                        }
+                        count++;
+                    }
+
+                    // Redirecionamento do Programa
+                    do {
+                        System.out.print(menuEscolha);
+                        indice = usuario.nextInt();
+
+                        if ( indice < 1 || indice > 3 ) {
+                            System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 3:");
+                        }
+
+
+                    } while ( indice < 1 || indice > 3 );
+
+
+                    if ( indice == 1  ) {
+                        break;
+                    }
+                    else if ( indice == 3  ) {
+                        endPrograma = true;
+                        break;
+                    }
+                    // Fim do redirecionamento
+
+
+
+
+                case 2:
+
+
+                case 4:
                     System.out.print("Selecione o primeiro valor desejado: ");
                     int inter1 = usuario.nextInt();
                     System.out.print("Selecione o segundo valor desejado: ");
@@ -82,10 +126,19 @@ public class ArrayExercicios {
                     for ( String nome : resultado ) {
                         System.out.print( nome + " → ");
                     }
-                    break;
-            }
 
-        break;
+
+                    // Redirecionamento do Programa
+                    do {
+                        System.out.print(menuEscolha);
+                        indice = usuario.nextInt();
+
+                        if ( indice < 1 || indice > 3 ) {
+                            System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 3:");
+                        }
+                    } while ( indice < 1 || indice > 3 );
+
+            }
         }
 
 
