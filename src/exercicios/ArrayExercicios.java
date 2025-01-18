@@ -54,6 +54,7 @@ public class ArrayExercicios {
                         }
                         count++;
                     }
+                    System.out.println();
 
                     // Redirecionamento do Programa
                     do {
@@ -76,12 +77,118 @@ public class ArrayExercicios {
                         break;
                     }
                     // Fim do redirecionamento
-                    
+
+
 
 
 
 
                 case 2:
+
+                    do {
+                        System.out.print("Deseja Ver os primeiros ate qual posição?: ");
+                        indice = usuario.nextInt();
+                        if (  indice < 1 || indice >  times.length  ){
+                            System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 8:");
+                        }
+                    }while ( indice < 1 || indice > ( times.length ) );
+                    System.out.println();
+
+                    String [] resultado2 = Arrays.copyOfRange( times, 0, indice );
+                    System.out.printf("Esses são os primeiros ate a posição %d %n", indice );
+
+
+
+                    count = 0;
+                    for ( String posição : resultado2 ){
+                        System.out.print( posição );
+                        if ( !( count == resultado2.length -1 ) ){
+                            System.out.print( " → " );
+                        }
+                        count++;
+                    }
+                    System.out.println();
+                    System.out.println();
+
+                    // Redirecionamento do Programa
+                    do {
+                        System.out.print(menuEscolha);
+                        indice = usuario.nextInt();
+
+                        if ( indice < 1 || indice > 3 ) {
+                            System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 3:");
+                        }
+
+
+                    } while ( indice < 1 || indice > 3 );
+
+
+                    if ( indice == 1  ) {
+                        break;
+                    }
+                    else if ( indice == 3  ) {
+                        endPrograma = true;
+                        break;
+                    }
+                    // Fim do redirecionamento
+
+
+
+
+
+                case 3:
+                    do {
+                        System.out.print("Deseja Ver os Ultimos a parti qual posição?: ");
+                        indice = usuario.nextInt();
+                        if (  indice < 1 || indice >  times.length  ){
+                            System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 8:");
+                        }
+                    }while ( indice < 1 || indice > ( times.length ) );
+                    System.out.println();
+
+                    String [] resultado3 = Arrays.copyOfRange( times, indice - 1, times.length  );
+                    System.out.printf("Esses são os ultimos a partir da posição %d %n", indice );
+
+
+
+                    count = 0;
+                    for ( String posição : resultado3){
+                        System.out.print( posição );
+                        if ( !( count == resultado3.length -1 ) ){
+                            System.out.print( " → " );
+                        }
+                        count++;
+                    }
+                    System.out.println();
+                    System.out.println();
+
+                    // Redirecionamento do Programa
+                    do {
+                        System.out.print(menuEscolha);
+                        indice = usuario.nextInt();
+
+                        if ( indice < 1 || indice > 3 ) {
+                            System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 3:");
+                        }
+
+
+                    } while ( indice < 1 || indice > 3 );
+
+
+                    if ( indice == 1  ) {
+                        break;
+                    }
+                    else if ( indice == 3  ) {
+                        endPrograma = true;
+                        break;
+                    }
+                    // Fim do redirecionamento
+
+
+
+
+
+
 
 
                 case 4:
@@ -118,15 +225,20 @@ public class ArrayExercicios {
                     System.out.println();
 
 
-                    String [] resultado = Arrays.copyOfRange( times, ( inter1 - 1) ,( inter2 ) );
+                    String [] resultado4 = Arrays.copyOfRange( times, ( inter1 - 1) ,( inter2 ) );
 
                     System.out.println(linha);
                     String primeiros = String.format("O intervalo entre os %d São: ",( inter2 - inter1 ) + 1 );
                     System.out.println(primeiros);
 
-                    for ( String nome : resultado ) {
-                        System.out.print( nome + " → ");
+                    count = 0;
+                    for ( String nome : resultado4) {
+                        if ( !( count == resultado4.length - 1 ) ) {
+                            System.out.print( nome + " → ");
+                        }
+                        count++;
                     }
+                    System.out.println();
 
 
                     // Redirecionamento do Programa
@@ -137,7 +249,19 @@ public class ArrayExercicios {
                         if ( indice < 1 || indice > 3 ) {
                             System.out.println("\nOpção inválida ! Selecione uma opção entre 1 e 3:");
                         }
+
+
                     } while ( indice < 1 || indice > 3 );
+
+
+                    if ( indice == 1  ) {
+                        break;
+                    }
+                    else if ( indice == 3  ) {
+                        endPrograma = true;
+                        break;
+                    }
+                    // Fim do redirecionamento
 
             }
         }
